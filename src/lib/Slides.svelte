@@ -81,7 +81,7 @@
 </script>
 
 <button on:click={utteranceOn=!utteranceOn}>Sound {utteranceOn ? 'on' : 'off'}</button>
-<img class="cortana" src="/cortana.gif" />
+<img class="cortana" src="/cortana.gif" alt="Cortana"></img>
 {#if showGreet}
     <div class="greet" transition:fade>{greeting}</div>
 {:else}
