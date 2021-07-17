@@ -17,15 +17,21 @@
 			greeting = ''
 		}, (delay + time) * 10)
 	}
+	
+	// Default time = showtime
+	function Slide(text, show, time = 1500) {
+		setTimeout(() => {
+			greeting = text
+			showGreet = show
+		}, time)
+	}
 
-	setTimeout(() => {
-		greeting = 'hello'
-		showGreet = true
-	}, 1000)
-	setTimeout(() => {
-		greeting = ''
-		showGreet = false
-	}, 2000)
+	Slide('hello', true)
+	Slide('', false, 3000)
+	Slide('let\'s design your vaccine', true)
+	Slide('', false, 6000)
+	Slide('I\'ll just ask some questions', true)
+	Slide('', false, 6000)
 </script>
 
 <svelte:head>

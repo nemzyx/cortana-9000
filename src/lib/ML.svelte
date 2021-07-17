@@ -4,29 +4,30 @@
     let inputText = 'Talk with Cortana here.';
     let answerText = 'Cortana will answer you here';
 
+    let answerIndex = 0;
+
     function OnAnswer(answers) {
         alert(answers);
     }
 
     function OnInput() {
-        
+        if (answerIndex == 1) answerText = "I'm sorry, you have to repeat that.";
+        answerIndex ++;
     }
 
  </script>
  
- <div class="card p-5">
+ <div class="">
     <h2 class="card-text">Cortana</h2>
     <div class="form-group">
         <label>🖊 Write here:</label>
-        <input type="text" name="title" class="form-control" bind:value={inputText} on:change={OnInput()}>
+        <input type="text" name="title" class="form-control" bind:value={inputText} on:change={console.log("input control")}>
         <span class="invalid-feedback">Dab on the haters</span>
-        <input type="submit" class="btn btn-primary" value="Submit">
         <p>{answerText}</p>
     </div>
 </div>
 
 <div passage="{passage}" question="{inputText}" on:answers="{OnAnswer}" />
-
     
 <style>
 

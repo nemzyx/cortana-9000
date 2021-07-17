@@ -6,7 +6,7 @@
 		const Instacam = await import('instacam')
             // .then((res) => { console.log(res); return res.default; })
         
-        let camera = new Instacam('camCanvas');
+        // let camera = new Instacam('camCanvas');
     })
 </script>
 
