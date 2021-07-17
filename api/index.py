@@ -18,21 +18,6 @@ def load_tokenizer_and_model(model="microsoft/DialoGPT-small"):
     return tokenizer, model
 
 
-def generate_response(tokenizer, model, chat_round, chat_history_ids):
-    """
-    Generate a response to some user input.
-    """
-
-    # Generate response given maximum chat length history of 1250 tokens
-    chat_history_ids = model.generate(bot_input_ids, max_length=1250, pad_token_id=tokenizer.eos_token_id)
-
-    # Print response
-    print("DialoGPT: {}".format(tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)))
-
-    # Return the chat history ids
-    return chat_history_ids
-
-
 def chat_response(history):
     """
     Receive a response given a history
@@ -46,9 +31,10 @@ def chat_response(history):
 
     for entry in history.split("|"):
         cur_input = tokenizer.encode(entry + tokenizer.eos_token, return_tensors='pt')
-        bot_input_ids = torch.cat([chat_history_ids, cur_input], dim=-1) if history != '' > 0 else cur_input
+        # chat_history_ids = [chat_history_ids, cur_input]
+        bot_input_ids = [chat_history_ids, cur_input] if history != '' > 0 else cur_input
 
-    chat_history_ids = mode.generate(bot_input_ids, max_length=1250, pad_token_id=tokenizer.eos_token_id)
+    chat_history_ids = model.generate(bot_input_ids, max_length=1250, pad_token_id=tokenizer.eos_token_id)
 
     return tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens = True)
 
