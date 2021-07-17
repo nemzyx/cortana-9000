@@ -6,3 +6,7 @@ node_modules
 /functions
 /.vercel_build_output
 .env
+api/Lib
+api/Scripts
+pyenv.cfg
+api/Include

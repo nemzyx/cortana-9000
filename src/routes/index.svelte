@@ -17,7 +17,10 @@
 	let clickStart_tracker
 	clickStart.subscribe((val) => clickStart_tracker = val)
 
-
+	onMount((val) => {	
+		let utterance = new window.SpeechSynthesisUtterance("Hello world!")
+		speechSynthesis.speak(utterance)
+	})
 </script>
 
 <svelte:head>

@@ -1,6 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition'
     import { debug } from '$lib/state.js'
+	import { onMount } from 'svelte'
 
     // Slideshow variables
 	let showGreet = false
@@ -9,8 +10,9 @@
 	let inputUpdated = false
 	let displayInput = false
 	let inputField
+	let utteranceOn = false
 
-    let speedUp = false
+    let speedUp = true
 
     // Default time = time to show the slide
 	function Slide(text, show, time = 1500) {
@@ -20,6 +22,7 @@
 					showGreet = show
 					resolve("resolved")
 					console.log("Promise ran with: " + text)
+					utteranceOn ? new SpeechSynthesisUtterance(text).speak() : console.log("Utterance off")
 			}, (speedUp ? time * 0.1 : time))
 		})
 	}
@@ -77,6 +80,7 @@
 	slidesRun()
 </script>
 
+<button on:click={utteranceOn=!utteranceOn}>Sound {utteranceOn ? 'on' : 'off'}</button>
 <img class="cortana" src="/cortana.gif" />
 {#if showGreet}
     <div class="greet" transition:fade>{greeting}</div>
