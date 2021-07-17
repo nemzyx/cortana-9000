@@ -21,7 +21,7 @@
     <h2 class="card-text">Cortana</h2>
     <div class="form-group">
         <label>🖊 Write here:</label>
-        <input type="text" name="title" class="form-control" bind:value={inputText} on:change={console.log("input control")}>
+        <input type="text" name="title" class="form-control" bind:value={inputText} on:change={console.log("input control: " + answerIndex)}>
         <span class="invalid-feedback">Dab on the haters</span>
         <p>{answerText}</p>
     </div>
