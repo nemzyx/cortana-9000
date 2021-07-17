@@ -3,7 +3,9 @@
 </script>
 
 <script>
-	import Camera from 'easy-js-camera';
+    <script>var exports = {};</script>
+
+	import Camera from 'easy-js-camera/lib/Camera.cjs';
 
     if(Camera.isCameraSupported()) {
 
