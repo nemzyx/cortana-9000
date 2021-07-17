@@ -12,8 +12,6 @@
 	function AddHistory(key, value, index) {
 
 	}
-
-	history.update((n) => n)
 		
 	// Store variables
 	let clickStart_tracker

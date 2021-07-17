@@ -10,8 +10,7 @@
 	let displayInput = false
 	let inputField
 
-    let speedUp
-    const unsubscribe = debug.subscribe(value => { speedUp = value; });
+    let speedUp = false
 
     // Default time = time to show the slide
 	function Slide(text, show, time = 1500) {
