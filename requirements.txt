@@ -56,7 +56,7 @@
 # HeapDict==1.0.1
 # html5lib==1.1
 httpserver==1.1.0
-huggingface-hub==0.0.12
+# huggingface-hub==0.0.12
 # idna==2.10
 # imageio==2.9.0
 # imagesize==1.2.0
@@ -73,7 +73,7 @@ huggingface-hub==0.0.12
 # jedi==0.17.1
 # Jinja2==2.11.2
 # joblib==0.16.0
-json5==0.9.5
+# json5==0.9.5
 # jsonschema==3.2.0
 # jupyter==1.0.0
 # jupyter-client==6.1.6
