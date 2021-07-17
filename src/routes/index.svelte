@@ -24,7 +24,7 @@
 	<Slides />
 
 	<div class="process-bar">
-		<a href="#" on:click={() => {clickStart.set(!clickStart_tracker)}}><img src="windows-icon.jpg" alt="windows icon"></img></a>
+		<a href="#" on:click={() => {clickStart.set(!clickStart_tracker)}}><img src="windows-icon.jpg" alt="windows icon"/></a>
 	</div>
 </section>
 
