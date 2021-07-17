@@ -15,5 +15,8 @@ export const history = writable({
     },
     race : {
 
+    },
+    installCal : {
+        
     }
 });
