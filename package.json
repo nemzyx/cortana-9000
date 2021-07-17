@@ -15,6 +15,7 @@
 		"browser-env": "^3.3.0",
 		"cssnano": "^5.0.6",
 		"easy-js-camera": "^2.1.0",
+		"instacam": "^1.15.0",
 		"postcss": "^8.3.5",
 		"postcss-load-config": "^3.1.0",
 		"postcss-nested": "^5.0.5",
@@ -31,7 +32,6 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.2.2",
 		"@lukeed/uuid": "^2.0.0",
-		"cookie": "^0.4.1",
-		"instacam": "^1.15.0"
+		"cookie": "^0.4.1"
 	}
 }
