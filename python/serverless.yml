@@ -1,0 +1,9 @@
+service: cortana-9000
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  hello-world:
+    handler: functions/handler.main
