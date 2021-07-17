@@ -8,17 +8,6 @@
 	let showGreet = false
 
 	let greeting = ''
-
-	let greet = (content, delay, time) => {
-		setTimeout(() => {
-			greeting = 'hello'
-			showGreet = true
-		}, delay * 10)
-		setTimeout(() => {
-			greeting = ''
-			showGreet = false
-		}, (delay + time) * 10)
-	}
 	
 	// Default time = showtime
 	function Slide(text, show, time = 1500) {
@@ -61,6 +50,7 @@
 
 <style lang="postcss">
 	section {
+		padding-top: 30vh;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-center;
@@ -71,14 +61,16 @@
 		text-align: center;
 		
 		.greet {
-			color: #289CC1;
+			color: #38ACC1;
 			font-size: 6rem;
 			line-height: 6rem;
+			height: 10rem;
 		}
 
 		.cortana {
 			width: 15%;
 			height: auto;
+			
 		}
 	}
 </style>
