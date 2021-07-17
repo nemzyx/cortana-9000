@@ -9,29 +9,40 @@
 
 	let greeting = ''
 
-	const greet = (content, delay, time) => {
+	let greet = (content, delay, time) => {
 		setTimeout(() => {
 			greeting = 'hello'
+			showGreet = true
 		}, delay * 10)
 		setTimeout(() => {
 			greeting = ''
+			showGreet = false
 		}, (delay + time) * 10)
 	}
 	
 	// Default time = showtime
 	function Slide(text, show, time = 1500) {
-		setTimeout(() => {
-			greeting = text
-			showGreet = show
-		}, time)
+		return new Promise((resolve) => {
+				setTimeout(() => {
+				greeting = text
+				showGreet = show
+				resolve("resolved")
+				console.log("Promise ran with: " + text)
+			}, time)
+		})
 	}
 
-	Slide('hello', true)
-	Slide('', false, 3000)
-	Slide('let\'s design your vaccine', true)
-	Slide('', false, 6000)
-	Slide('I\'ll just ask some questions', true)
-	Slide('', false, 6000)
+	let run = async () => {
+		await Slide('hello', true)
+		await Slide('', false, 3000)
+		await Slide('let\'s design your vaccine', true)
+		await Slide('', false, 5000)
+		await Slide('I\'ll just ask some questions', true)
+		await Slide('', false, 5000)
+	}
+
+	run()
+
 </script>
 
 <svelte:head>
@@ -39,21 +50,35 @@
 </svelte:head>
 
 <section>
+	<img class="cortana" src="/cortana.gif" />
 	{#if showGreet}
 		<div class="greet" transition:fade>{greeting}</div>
+	{/if}
+	{#if !showGreet}
+		<div class="greet"> </div>
 	{/if}
 </section>
 
 <style lang="postcss">
 	section {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-center;
 		place-items: center;
 		min-height: 100vh;
-		background: #287dc7;
+		background: #0E0E0E;
 		color: white;
-
+		text-align: center;
+		
 		.greet {
-			font-size: 10rem;
+			color: #289CC1;
+			font-size: 6rem;
+			line-height: 6rem;
+		}
+
+		.cortana {
+			width: 15%;
+			height: auto;
 		}
 	}
 </style>
