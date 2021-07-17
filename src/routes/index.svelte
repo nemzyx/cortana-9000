@@ -4,24 +4,25 @@
 
 <script>
 	import { fade } from 'svelte/transition'
-
+	import { onMount } from 'svelte';
+	
 	let showGreet = false
-
 	let greeting = ''
 	let inputText = ''
 	let inputUpdated = false
 	let displayInput = false
 	let speedUp = true
 	let inputField
+	let elem
 
-	import { onMount } from 'svelte';
 
 	onMount(() => {
 		/* Get the documentElement (<html>) to display the page in fullscreen */
-		var elem = document.documentElement;
+		elem = document.documentElement;
 
 		/* View in fullscreen */
 		function openFullscreen() {
+			console.log(elem.requestFullscreen)
 			if (elem.requestFullscreen) {
 				elem.requestFullscreen();
 			} else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -33,6 +34,10 @@
 
 		openFullscreen()
 	})
+
+	
+	
+
 
 	// Default time = time to show the slide
 	function Slide(text, show, time = 1500) {
