@@ -10,10 +10,10 @@
 	debug.set(true)
 
 	function AddHistory(key, value, index) {
-		
+
 	}
 
-	history.update((n) => n.push({}))
+	history.update((n) => n)
 		
 	// Store variables
 	let clickStart_tracker
