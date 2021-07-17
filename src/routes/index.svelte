@@ -1,9 +1,14 @@
 <script context="module">
-	export const prerender = true;
+	export const prerender = true
+	export const ssr = false
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
+	import Instacam from 'instacam'
+
+	let cameraRender
+
+	let camera = new Instacam(cameraRender)
 </script>
 
 <svelte:head>
@@ -11,22 +16,8 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	Hello
+	<canvas bind:this={cameraRender} />
 </section>
 
 <style>
