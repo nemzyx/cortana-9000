@@ -20,19 +20,23 @@
 	--column-margin-top: 4rem;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
+	/* background-color: var(--primary-color);
 	background: linear-gradient(
 		180deg,
 		var(--primary-color) 0%,
 		var(--secondary-color) 10.45%,
 		var(--tertiary-color) 41.35%
-	);
+	); */
 }
 
-body::before {
+/* body::before {
 	content: '';
 	width: 80vw;
 	height: 100vh;
@@ -46,15 +50,15 @@ body::before {
 		rgba(255, 255, 255, 0) 100%
 	);
 	opacity: 0.05;
-}
+} */
 
-#svelte {
+/* #svelte {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-}
+} */
 
-h1,
+/* h1,
 h2,
 p {
 	font-weight: 400;
@@ -109,7 +113,7 @@ button:focus:not(:focus-visible) {
 	h1 {
 		font-size: 2.4rem;
 	}
-}
+} */
 
 @tailwind components;
 

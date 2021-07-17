@@ -1,4 +1,5 @@
 <script>
+	import '../app.postcss'
 </script>
 
 <main>
@@ -6,5 +7,4 @@
 </main>
 
 <style>
-	
 </style>

@@ -1,14 +1,31 @@
 <script context="module">
 	export const prerender = true
-	export const ssr = false
 </script>
 
 <script>
-	import Instacam from 'instacam'
+	import { fade } from 'svelte/transition'
 
-	let cameraRender
+	let showGreet = false
 
-	let camera = new Instacam(cameraRender)
+	let greeting = ''
+
+	const greet = (content, delay, time) => {
+		setTimeout(() => {
+			greeting = 'hello'
+		}, delay * 10)
+		setTimeout(() => {
+			greeting = ''
+		}, (delay + time) * 10)
+	}
+
+	setTimeout(() => {
+		greeting = 'hello'
+		showGreet = true
+	}, 1000)
+	setTimeout(() => {
+		greeting = ''
+		showGreet = false
+	}, 2000)
 </script>
 
 <svelte:head>
@@ -16,35 +33,21 @@
 </svelte:head>
 
 <section>
-	Hello
-	<canvas bind:this={cameraRender} />
+	{#if showGreet}
+		<div class="greet" transition:fade>{greeting}</div>
+	{/if}
 </section>
 
-<style>
+<style lang="postcss">
 	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
+		display: grid;
+		place-items: center;
+		min-height: 100vh;
+		background: #287dc7;
+		color: white;
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+		.greet {
+			font-size: 10rem;
+		}
 	}
 </style>
