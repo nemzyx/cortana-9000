@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 
-def load_tokenizer_and_model(model="microsoft/DialoGPT-large"):
+def load_tokenizer_and_model(model="microsoft/DialoGPT-small"):
     """
     Load tokenizer and model instance for some specific DialoGPT model.
     """
