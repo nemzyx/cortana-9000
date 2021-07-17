@@ -1,29 +1,19 @@
 import preprocess from 'svelte-preprocess'
 import netlify from '@sveltejs/adapter-netlify'
+import vercel from '@sveltejs/adapter-vercel'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
-		adapter: netlify(),
-
-		vite: {
-			// optimizeDeps: {
-			// 	include: ['blurhash'],
-			// },
-			// ssr: {
-			// 	// noExternal: ['svelte-image'],
-			// 	noExternal: ['instacam'],
-			// },
-		},
-	},
-
 	preprocess: [
 		preprocess({
 			postcss: true,
 		}),
 	],
+	kit: {
+		// hydrate the <div id="svelte"> element in src/app.html
+		target: '#svelte',
+		adapter: netlify(),
+	},
 }
 
 export default config
