@@ -4,4 +4,5 @@ node_modules
 /package
 /build
 /functions
+/.vercel_build_output
 .env
